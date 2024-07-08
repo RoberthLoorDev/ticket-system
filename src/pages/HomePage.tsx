@@ -1,7 +1,9 @@
+import GlobalLayout from "../layouts/GlobalLayout";
+
 export default function HomePage() {
     return (
-        <div>
-            <span>Home</span>
-        </div>
+        <GlobalLayout title="Home">
+            <h1>Hola</h1>
+        </GlobalLayout>
     );
 }
