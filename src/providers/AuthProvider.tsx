@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 interface AuthContextType {
-    token: string | null;
     userId: string | null;
+    token: string | null;
     login: (token: string, id: string) => void;
     logout: () => void;
 }
@@ -21,12 +21,13 @@ export default function AuthProvider({ children }: AuthProvidersProps) {
         const storedToken = localStorage.getItem("token");
         const storedUserId = localStorage.getItem("userId");
         if (storedToken) setToken(storedToken);
-        if (storedUserId) setToken(storedUserId);
+        if (storedUserId) setUserId(storedUserId);
     }, []);
 
     const login = (newToken: string, newUserId: string) => {
         setToken(newToken);
         setUserId(newUserId);
+
         localStorage.setItem("token", newToken);
         localStorage.setItem("userId", newUserId);
     };

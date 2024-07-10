@@ -22,7 +22,7 @@ export default function useLogin() {
 
             if (response.ok) navigate("/");
 
-            login(idUser, token);
+            login(token, idUser);
         } catch (error) {
             console.error(error);
         }
