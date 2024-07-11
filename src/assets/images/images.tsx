@@ -10,6 +10,7 @@ import icon_nomina from "./nomina.png";
 import icon_report from "./form.png";
 import icon_reconciliation from "./house.png";
 import icon_support from "./tool.png";
+import icon_ticket from "./ticket.png";
 
 export const images = {
     icon_page,
@@ -24,4 +25,5 @@ export const images = {
     icon_reconciliation,
     icon_support,
     icon_nomina,
+    icon_ticket,
 };

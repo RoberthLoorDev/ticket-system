@@ -6,7 +6,3 @@ body {
     color: #161c2c;
     font-family: "Libre Franklin", sans-serif;
 }
-
-.login-container {
-    box-shadow: 0.5rem 0.5rem 1.5rem rgba(0, 0, 0, 0.103);
-}

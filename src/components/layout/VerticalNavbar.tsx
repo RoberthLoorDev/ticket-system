@@ -5,7 +5,7 @@ export default function VerticalNavbar() {
     const { logout } = useAuth();
 
     return (
-        <div className="min-h-screen w-[255px] shadow-2xl relative">
+        <div className="min-h-screen min-w-[255px] shadow-2xl relative">
             <div className="w-full flex justify-center mt-4">
                 <img src={images.icon_page} alt="Icono de la página" className="w-auto h-[58px]" />
             </div>
