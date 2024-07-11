@@ -12,7 +12,7 @@ export default function GlobalLayout({ children, title }: LayoutProps) {
     }, [title]);
 
     return (
-        <div>
+        <div className="flex">
             <VerticalNavbar />
             <main>{children}</main>
         </div>
