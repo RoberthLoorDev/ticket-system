@@ -4,6 +4,7 @@ export interface PostTicketInterface {
     description: string;
     priority: string;
     department: string;
+    status: "nuevo";
 }
 
 export interface GetTicketsUserInterface {
@@ -17,4 +18,11 @@ export interface GetTicketsUserInterface {
     status: string | null;
     subject: string;
     technician_name: string | null;
+}
+
+export interface UserInterface {
+    id: number;
+    name: string;
+    email: string;
+    rol_name: string;
 }

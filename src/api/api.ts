@@ -56,3 +56,23 @@ export const createTicket = async (ticketData: PostTicketInterface, token: strin
         console.error(error);
     }
 };
+
+//get user data
+export const getUserData = async (idUser: string, token: string) => {
+    try {
+        const response = await fetch(`${urlAPI}/getUser/${idUser}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        });
+
+        const responseApi = await response.json();
+
+        const infoUser = responseApi.data[0];
+        return infoUser;
+    } catch (error) {
+        console.log(error);
+    }
+};
