@@ -6,3 +6,7 @@ body {
     color: #161c2c;
     font-family: "Libre Franklin", sans-serif;
 }
+
+.shadow-navbar {
+    box-shadow: 1rem 0rem 2rem rgba(0, 0, 0, 0.19);
+}
