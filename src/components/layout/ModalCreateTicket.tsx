@@ -17,7 +17,7 @@ export default function ModalCreateTicket({ closeModal, infoUser }: ModalProps) 
             <div className="bg-[#161C2C] absolute top-0 left-0 h-screen w-full z-50 bg-opacity-90 flex justify-center">
                 <form
                     action=""
-                    className="flex flex-col mt-10 w-[537px] h-[439px] bg-[#FFF] rounded-2xl p-8 relative"
+                    className="flex flex-col mt-10 w-[637px] h-[439px] bg-[#FFF] rounded-2xl p-8 relative"
                     onSubmit={handleSubmit}
                 >
                     <span
@@ -29,7 +29,7 @@ export default function ModalCreateTicket({ closeModal, infoUser }: ModalProps) 
                     <h2 className="text-2xl font-semibold mb-3">Crear Ticket</h2>
 
                     <div className="flex justify-between gap-4">
-                        <div className="">
+                        <div className="w-[50%]">
                             <label htmlFor="" className="block">
                                 Usuario
                             </label>
@@ -93,7 +93,7 @@ export default function ModalCreateTicket({ closeModal, infoUser }: ModalProps) 
                             <textarea
                                 name="description"
                                 onChange={handleChangeForm}
-                                className="w-full h-[14.3rem] bg-[#DDD] outline-none p-2 rounded-md"
+                                className="w-full h-[14.3rem] bg-[#DDD] outline-none p-2 rounded-md resize-none"
                             ></textarea>
                         </div>
                     </div>
