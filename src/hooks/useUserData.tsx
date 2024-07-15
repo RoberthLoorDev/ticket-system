@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { getUserData } from "../api/api";
 import { UserInterface } from "../types/interaces";
