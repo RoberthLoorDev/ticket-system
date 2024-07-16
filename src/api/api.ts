@@ -43,6 +43,15 @@ export const getTicketsForUserId = async (token: string, userId: string) => {
 
 //create a ticket
 export const createTicket = async (ticketData: PostTicketInterface, token: string) => {
+    const emptyData = checkEmptyFields(ticketData);
+
+    if (emptyData) {
+        toast.error("Error: No dejar campos vacíos");
+        return;
+    }
+
+    toast.success("Ticket creado con éxito");
+
     try {
         const response = await fetch(`${urlAPI}/ticket/createTicket`, {
             method: "POST",
@@ -52,15 +61,6 @@ export const createTicket = async (ticketData: PostTicketInterface, token: strin
             },
             body: JSON.stringify(ticketData),
         });
-
-        const emptyData = checkEmptyFields(ticketData);
-
-        if (emptyData) {
-            toast.error("Error: No dejar campos vacíos");
-            return;
-        }
-
-        if (response.status == 200) toast.success("Ticket creado con éxito");
     } catch (error) {
         toast.error("Error al crear el ticket");
     }
