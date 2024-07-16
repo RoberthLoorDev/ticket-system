@@ -1,8 +1,14 @@
 import { useAuth } from "../../providers/AuthProvider";
 import { images } from "../../assets/images/images";
+import { getUserData } from "../../api/api";
+import { UserInterface } from "../../types/interaces";
+import { useUserData } from "../../hooks/useUserData";
 
 export default function VerticalNavbar() {
+    const { token, userId } = useAuth();
     const { logout } = useAuth();
+    if (!userId || !token) return;
+    const { infoUser } = useUserData(userId, token);
 
     return (
         <div className="h-full min-w-[255px] shadow-2xl relative">
@@ -55,8 +61,8 @@ export default function VerticalNavbar() {
                 <div className="flex w-full px-5 items-center h-[58px] absolute bottom-10 bg-white z-50">
                     <img src={images.icon_user} alt="Usuario" />
                     <div className="flex flex-col ml-3 flex-1 truncate">
-                        <span className="font-semibold truncate">Ronaldo Choez</span>
-                        <span className="-mt-1">Adminsitrador</span>
+                        <span className="font-semibold truncate">{infoUser?.name}</span>
+                        <span className="-mt-1">{infoUser?.rol_name}</span>
                     </div>
                     <img
                         src={images.icon_logout}
