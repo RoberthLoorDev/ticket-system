@@ -10,3 +10,20 @@ body {
 .shadow-navbar {
     box-shadow: 1rem 0rem 2rem rgba(0, 0, 0, 0.19);
 }
+
+.table-tickets-user-container::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.table-tickets-user-container::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.table-tickets-user-container::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 10px;
+}
