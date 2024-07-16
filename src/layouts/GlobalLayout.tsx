@@ -12,9 +12,9 @@ export default function GlobalLayout({ children, title }: LayoutProps) {
     }, [title]);
 
     return (
-        <div className="flex">
+        <div className="flex w-full ">
             <VerticalNavbar />
-            <main>{children}</main>
+            <main className="w-full">{children}</main>
         </div>
     );
 }

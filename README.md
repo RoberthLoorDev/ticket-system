@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Sistema de Gestión de Tickets para Soporte TI Empresarial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
+Este sistema proporciona una plataforma eficiente para la gestión de tickets de soporte en áreas de TI empresariales. Facilita la comunicación entre empleados, administradores y profesionales de soporte, optimizando el proceso de resolución de problemas técnicos.
 
-Currently, two official plugins are available:
+## Instalación
+1. Clonar el repositorio
+2. Instalar dependencias: npm install
+3. Iniciar el servidor de desarrollo: npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Uso
+El sistema consta de tres interfaces principales:
 
-## Expanding the ESLint configuration
+1. Interfaz de Empleado:
+   - Ver tickets creados
+   - Crear nuevos tickets especificando:
+     * Área del solicitante
+     * Prioridad
+     * Asunto
+     * Descripción detallada
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Interfaz de Administrador:
+   - Recibir notificaciones de nuevos tickets
+   - Ver todos los tickets creados
+   - Asignar profesionales de soporte a los tickets
+   - Establecer fechas límite para la resolución
 
-- Configure the top-level `parserOptions` property like this:
+3. Interfaz de Soporte:
+   - Recibir notificaciones de tickets asignados
+   - Ver y gestionar tickets asignados
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Características Principales
+- Creación y seguimiento de tickets en tiempo real
+- Sistema de notificaciones por correo electrónico
+- Asignación de prioridades y fechas límite
+- Interfaz intuitiva para tres tipos de usuarios
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tecnologías Utilizadas
+- Frontend: React, Tailwind
+- Backend: Express
+- Base de datos: PostgresSQL
+
+## Contribución
+Las contribuciones son bienvenidas. Por favor, lea las guías de contribución antes de enviar un pull request.

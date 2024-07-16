@@ -1,6 +1,8 @@
 //log user
 
+import { toast } from "react-toastify";
 import { PostTicketInterface } from "../types/interaces";
+import { checkEmptyFields } from "../utils/utills";
 
 const urlAPI = "http://localhost:3000/api/v1";
 
@@ -41,6 +43,15 @@ export const getTicketsForUserId = async (token: string, userId: string) => {
 
 //create a ticket
 export const createTicket = async (ticketData: PostTicketInterface, token: string) => {
+    const emptyData = checkEmptyFields(ticketData);
+
+    if (emptyData) {
+        toast.error("Error: No dejar campos vacíos");
+        return;
+    }
+
+    toast.success("Ticket creado con éxito");
+
     try {
         const response = await fetch(`${urlAPI}/ticket/createTicket`, {
             method: "POST",
@@ -50,9 +61,27 @@ export const createTicket = async (ticketData: PostTicketInterface, token: strin
             },
             body: JSON.stringify(ticketData),
         });
-
-        console.log(await response.json());
     } catch (error) {
-        console.error(error);
+        toast.error("Error al crear el ticket");
+    }
+};
+
+//get user data
+export const getUserData = async (idUser: string, token: string) => {
+    try {
+        const response = await fetch(`${urlAPI}/getUser/${idUser}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        });
+
+        const responseApi = await response.json();
+
+        const infoUser = responseApi.data[0];
+        return infoUser;
+    } catch (error) {
+        console.log(error);
     }
 };
