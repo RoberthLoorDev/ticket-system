@@ -6,6 +6,7 @@ import { useUserData } from "../hooks/useUserData";
 import GlobalLayout from "../layouts/GlobalLayout";
 import { useAuth } from "../providers/AuthProvider";
 import { UserInterface } from "../types/interaces";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function HomePage() {
     const { token, userId, logout } = useAuth();
@@ -32,6 +33,7 @@ export default function HomePage() {
 
     return (
         <GlobalLayout title="Solicitar soporte">
+            <ToastContainer />
             <div className="px-7 flex flex-col items-center relative">
                 {/* Show and hide modal for create ticket */}
                 {showModalCreate ? (

@@ -1,5 +1,6 @@
 //log user
 
+import { toast } from "react-toastify";
 import { PostTicketInterface } from "../types/interaces";
 
 const urlAPI = "http://localhost:3000/api/v1";
@@ -51,9 +52,12 @@ export const createTicket = async (ticketData: PostTicketInterface, token: strin
             body: JSON.stringify(ticketData),
         });
 
-        console.log(await response.json());
+        console.log(ticketData);
+
+        if (response.status == 404) toast.error("Error: No dejar campos vacíos");
+        if (response.status == 200) toast.success("Ticket creado con éxito");
     } catch (error) {
-        console.error(error);
+        toast.error("Error al crear el ticket");
     }
 };
 

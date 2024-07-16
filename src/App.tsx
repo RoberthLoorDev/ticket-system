@@ -5,6 +5,9 @@ import AuthProvider from "./providers/AuthProvider";
 import PrivateRoutes from "./PrivateRoutes";
 import { useEffect } from "react";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
     useEffect(() => {
         document.title = "Iniciar sesión";
@@ -12,6 +15,7 @@ function App() {
 
     return (
         <div className="App">
+            <ToastContainer />
             <AuthProvider>
                 <Routes>
                     <Route element={<PrivateRoutes />}>
