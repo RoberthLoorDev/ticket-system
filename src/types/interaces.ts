@@ -8,6 +8,7 @@ export interface PostTicketInterface {
 }
 
 export interface GetTicketsUserInterface {
+    id: string;
     creation_date: string;
     department: string;
     description: string;

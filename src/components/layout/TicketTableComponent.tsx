@@ -41,7 +41,7 @@ export default function TicketTableComponent() {
                     <tbody className="text-sm">
                         {ticketsFromConsult.map((ticket, key) => (
                             <tr key={key} className="h-12 hover:bg-slate-200 cursor-pointer duration-300">
-                                <td className="px-7">ID2983Y74</td>
+                                <td className="px-7">{`TCKT${ticket.id}`}</td>
 
                                 <td className="px-3 min-w-[12rem]">{ticket.subject}</td>
 
