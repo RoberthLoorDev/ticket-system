@@ -19,7 +19,6 @@ export default function HomePage() {
 
         if (!infoUser) {
             timeoutId = setTimeout(() => {
-                console.log("No hay usuario");
                 logout();
             }, 2000);
         }

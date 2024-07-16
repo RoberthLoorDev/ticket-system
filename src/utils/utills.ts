@@ -25,3 +25,13 @@ export const refactorDate = (date: string) => {
 
     return `${day} ${month}, ${year}`;
 };
+
+//find empty data when creating a ticket
+export const checkEmptyFields = (obj: { [key: string]: any }): boolean => {
+    for (const key in obj) {
+        if (obj[key] === "" || obj[key] === null || obj[key] === undefined) {
+            return true;
+        }
+    }
+    return false;
+};

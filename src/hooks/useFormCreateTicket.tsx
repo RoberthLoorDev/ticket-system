@@ -7,7 +7,7 @@ export function useFormCreateTicket(userId: string, token: string) {
         user_id: Number(userId),
         subject: "",
         description: "",
-        priority: "",
+        priority: "baja",
         department: "",
         status: "nuevo",
     });
