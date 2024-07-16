@@ -25,8 +25,8 @@ export default function TicketTableComponent() {
 
     return (
         <div className="overflow-x-auto py-2 min-w-full flex justify-center">
-            <div className="overflow-y-auto max-h-[35rem]">
-                <table className="mt-5 text-[#161C2C] w-full max-w-[100rem]" cellPadding={10}>
+            <div className="overflow-y-auto max-h-[35rem] table-tickets-user-container">
+                <table className="text-[#161C2C] w-full max-w-[100rem]" cellPadding={10}>
                     <thead className="bg-[#DFDFDF] h-[57px]">
                         <tr className="text-left mb-2">
                             <th className="px-7">Ticket</th>
